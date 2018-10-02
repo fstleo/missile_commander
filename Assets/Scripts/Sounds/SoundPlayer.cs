@@ -4,15 +4,16 @@ using System.Collections.Generic;
 namespace Common.Sound
 {
     public class SoundPlayer
-    {      
+    {
+        private static SoundPlayer _instance;
+        private static SoundPlayer Instance => _instance ?? (_instance = new SoundPlayer(10));
+
+
         private readonly Dictionary<string, AudioClip> _sounds;
         private readonly AudioSource [] _sources;
-        int currentChannel = 0;
+        private int currentChannel = 0;
 
-        public static bool Enabled;
-        
-
-        public SoundPlayer(int sourcesCount) 
+        private SoundPlayer(int sourcesCount) 
         {
             _sounds = new Dictionary<string, AudioClip>();
             var sourcesGameObject = new GameObject("SoundSources");
@@ -27,23 +28,23 @@ namespace Common.Sound
             foreach(AudioClip clip in clips)
             {
                 _sounds.Add(clip.name, clip);
-            }
-            Enabled = true;
+            }            
         }
 
-        public void PlaySound(string name, bool loop = false)
+        private void PlaySound(string name)
         {
-            if (Enabled)
-            {
-                _sources[currentChannel].clip = _sounds[GetRandomSound(name)];
-                _sources[currentChannel].pitch = 1 + Random.Range(-0.3f, 0.3f);
-                _sources[currentChannel].Play();
-                _sources[currentChannel].loop = loop;
-                currentChannel = (currentChannel + 1) % _sources.Length;
-            }
+            _sources[currentChannel].clip = _sounds[GetRandomSound(name)];
+            _sources[currentChannel].pitch = 1 + Random.Range(-0.3f, 0.3f);
+            _sources[currentChannel].Play();                
+            currentChannel = (currentChannel + 1) % _sources.Length;
         }
 
-        string GetRandomSound(string name)
+        public static void Play(string name)
+        {
+            Instance.PlaySound(name);
+        }
+
+        private string GetRandomSound(string name)
         {
             List<string> clips = new List<string>();
             foreach (KeyValuePair<string, AudioClip> pair in _sounds)

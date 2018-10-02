@@ -1,8 +1,14 @@
 ﻿namespace Util.ObjectPool
 {
-    public interface IObjectPool<T>
+    public interface IObjectPool
     {
-        T Get(float time = -1);
-        void Return(T obj);
+        object Get();
+        void Return(object item);
+    }
+    
+    public interface IObjectPool<T> : IObjectPool 
+    {
+        new T Get();
+        void Return(T item);
     }
 }

@@ -1,0 +1,102 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: d4d85e6deb255c543b50cd89d357109e, type: 3}
+  m_Name: Enemies
+  m_EditorClassIdentifier: 
+  _rocketPrefab: {fileID: 1869026412017566, guid: b207044dd0fda92439c22c8f5bb02156,
+    type: 2}
+  _planePrefab: {fileID: 1578577242297226, guid: 106169866092c8c4cb0b8b2335610626,
+    type: 2}
+  _ufoPrefab: {fileID: 1578577242297226, guid: 25c75e90110e3e7468cd3dda02a1490c, type: 2}
+  _levels:
+  - _spawnSettings:
+    - _spawnerType: 0
+      _count: 10
+      _projectileSpeed: 1
+    - _spawnerType: 1
+      _count: 5
+      _projectileSpeed: 1
+  - _spawnSettings:
+    - _spawnerType: 0
+      _count: 10
+      _projectileSpeed: 1
+    - _spawnerType: 1
+      _count: 5
+      _projectileSpeed: 1
+    - _spawnerType: 2
+      _count: 2
+      _projectileSpeed: 1
+    - _spawnerType: 3
+      _count: 2
+      _projectileSpeed: 1
+  - _spawnSettings:
+    - _spawnerType: 0
+      _count: 10
+      _projectileSpeed: 2
+    - _spawnerType: 1
+      _count: 5
+      _projectileSpeed: 2
+    - _spawnerType: 2
+      _count: 3
+      _projectileSpeed: 2
+    - _spawnerType: 3
+      _count: 3
+      _projectileSpeed: 2
+  - _spawnSettings:
+    - _spawnerType: 0
+      _count: 12
+      _projectileSpeed: 2
+    - _spawnerType: 1
+      _count: 7
+      _projectileSpeed: 2
+    - _spawnerType: 2
+      _count: 4
+      _projectileSpeed: 2
+    - _spawnerType: 3
+      _count: 4
+      _projectileSpeed: 2
+  - _spawnSettings:
+    - _spawnerType: 0
+      _count: 10
+      _projectileSpeed: 3
+    - _spawnerType: 1
+      _count: 7
+      _projectileSpeed: 3
+    - _spawnerType: 2
+      _count: 4
+      _projectileSpeed: 3
+    - _spawnerType: 3
+      _count: 4
+      _projectileSpeed: 3
+    - _spawnerType: 4
+      _count: 4
+      _projectileSpeed: 3
+  - _spawnSettings:
+    - _spawnerType: 0
+      _count: 12
+      _projectileSpeed: 3
+    - _spawnerType: 1
+      _count: 9
+      _projectileSpeed: 3
+    - _spawnerType: 2
+      _count: 3
+      _projectileSpeed: 3
+    - _spawnerType: 3
+      _count: 3
+      _projectileSpeed: 3
+    - _spawnerType: 4
+      _count: 3
+      _projectileSpeed: 3
+    - _spawnerType: 5
+      _count: 3
+      _projectileSpeed: 3
+  _pauseBetweenLevels: 6
+  _spawnTime: 1

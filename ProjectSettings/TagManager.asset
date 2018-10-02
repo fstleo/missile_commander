@@ -14,10 +14,10 @@ TagManager:
   - 
   - 
   - PostProcessing
-  - 
-  - 
-  - 
-  - 
+  - PlayerProjectile
+  - EnemyProjectile
+  - Explosion
+  - EnemyEntitiesWatcher
   - 
   - 
   - 
